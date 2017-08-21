@@ -5,6 +5,7 @@ import ArticleListPage from './components/page/ArticleListPage';
 import ArticlePage from './components/page/ArticlePage';
 import AboutPage from './components/page/AboutPage';
 import NodePage from './components/page/NodePage';
+import './App.css';
 
 class App extends Component {
   state = {
