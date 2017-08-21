@@ -36,7 +36,9 @@ class App extends Component {
         linkUser = (<Link to={`/user/${userInfoDetail.username}`}>
             <div>{userInfoDetail.username}</div>
           </Link>)
-        nodeTitle = <a href={'/node/' + nodeName}>{this.state.nodeTitle}</a>
+        nodeTitle = (<Link to={`/node/${nodeName}`}>
+             {this.state.nodeTitle}
+          </Link>)
       }
       userInfo = <Row style={{margin: '20px 0 0 0'}}>
         <Col span={4}>
