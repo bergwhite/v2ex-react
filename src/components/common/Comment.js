@@ -26,13 +26,13 @@ class App extends Component {
     return (
       <div>
       <Row style={{margin: '20px 0 0 32px'}}>
-        <Col span={1}>
+        <Col span={4}>
           <Link to={`/user/${userInfo.name}`}><Avatar src={userInfo.img} /></Link>
         </Col>
-        <Col span={2}>
+        <Col span={4}>
           <Link to={`/user/${userInfo.name}`}>{userInfo.name}</Link>
         </Col>
-        <Col span={1}>
+        <Col span={4}>
           {reply}
         </Col>
       </Row>

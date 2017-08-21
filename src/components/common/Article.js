@@ -8,7 +8,8 @@ class App extends Component {
     this.state = {
       artName: this.props.artName,
       artContent: this.props.artContent,
-      nodeTitle: this.props.nodeTitle
+      nodeTitle: this.props.nodeTitle,
+      nodeName: this.props.nodeName
     };
   }
   componentDidMount() {
@@ -16,7 +17,8 @@ class App extends Component {
   render() {
     const artName = this.state.artName
     const artContent = this.state.artContent
-    const nodeTitle = this.state.nodeTitle
+    const nodeName = this.state.nodeName
+    let nodeTitle = this.state.nodeTitle
     let linkImg = ''
     let linkUser = ''
     let userInfo = ''
@@ -34,15 +36,16 @@ class App extends Component {
         linkUser = (<Link to={`/user/${userInfoDetail.username}`}>
             <div>{userInfoDetail.username}</div>
           </Link>)
+        nodeTitle = <a href={'/node/' + nodeName}>{this.state.nodeTitle}</a>
       }
       userInfo = <Row style={{margin: '20px 0 0 0'}}>
-        <Col span={1}>
+        <Col span={4}>
           {linkImg}
         </Col>
-        <Col span={2}>
+        <Col span={16}>
           {linkUser}
         </Col>
-        <Col span={2}>
+        <Col span={4}>
           回复：{this.props.replies}
         </Col>
       </Row>

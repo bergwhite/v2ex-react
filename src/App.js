@@ -19,11 +19,16 @@ class App extends Component {
   render() {
     return (
       <div>
+        <div>
+          <a className="fork-me-wrap" href="https://github.com/bergwhite/v2ex-react" target="_blank" rel="noopener noreferrer">
+            <img alt="fork" className="fork-me" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" />
+          </a>
+        </div>
         <Row>
-          <Col span={2} style={{textAlign: 'center', lineHeight:'46px'}}>
+          <Col span={8} style={{textAlign: 'center', lineHeight:'46px'}}>
             V2EX-REACT
           </Col>
-          <Col span={22}>
+          <Col span={16}>
             <Menu
               onClick={this.handleClick}
               selectedKeys={[this.state.current]}

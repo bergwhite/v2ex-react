@@ -35,7 +35,7 @@ class App extends Component {
     const len = data.length
     for(let i = 0; i < len; i++){
       const e = data[i];
-      rows.push(<Article artName={e.title} artContent={e.content_rendered} userInfo={e.member} replies={e.replies} nodeTitle={e.node.title} isArticleDetail={true} key={e.id}></Article>)
+      rows.push(<Article artName={e.title} artContent={e.content_rendered} userInfo={e.member} replies={e.replies} nodeTitle={e.node.title} nodeName={e.node.name} isArticleDetail={true} key={e.id}></Article>)
     }
     let commRows = []
     const comm = this.state.comm || []
