@@ -5,7 +5,6 @@ import ArticleListPage from './components/page/ArticleListPage';
 import ArticlePage from './components/page/ArticlePage';
 import AboutPage from './components/page/AboutPage';
 import NodePage from './components/page/NodePage';
-import './App.css';
 
 class App extends Component {
   state = {
@@ -18,11 +17,20 @@ class App extends Component {
   }
 
   render() {
+
+    const forkStyle = {
+      display: 'block',
+      position: 'absolute',
+      right: 0,
+      top: 0,
+      zIndex: 999
+    }
+
     return (
       <div>
         <div>
-          <a className="fork-me-wrap" href="https://github.com/bergwhite/v2ex-react" target="_blank" rel="noopener noreferrer">
-            <img alt="fork" className="fork-me" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" />
+          <a style={forkStyle} className="fork-me-wrap" href="https://github.com/bergwhite/v2ex-react" target="_blank" rel="noopener noreferrer">
+            <img style={{display:'block', width: '100px', height: '100px'}} alt="fork" className="fork-me" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" />
           </a>
         </div>
         <Row>

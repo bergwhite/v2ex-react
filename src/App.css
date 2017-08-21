@@ -33,18 +33,3 @@ img {
   width: 80%;
   text-overflow: ellipsis
 }
-
-.fork-me-wrap {
-  display: block;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 4rem;
-  height: 4rem;
-  z-index: 999;
-}
-
-.fork-me {
-    width: 4rem;
-    height: 4rem;
-}
