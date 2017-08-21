@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom'
 import {Col, Row, Pagination}  from 'antd';
 import Article  from '../common/Article';
 import getData  from '../../util/getData';
+import isMobile  from '../../util/isMobile';
 
 class App extends Component {
 
   constructor(props) {
     super(props)
+    const isMobileState = isMobile()
     this.state = {
       data: [],
-      isMobile: false
+      isMobile: isMobileState
     }
     const realUrlType = 'nodeAll'
     getData.getData(realUrlType, '', (e) => {
@@ -31,24 +33,10 @@ class App extends Component {
     console.log(this)
   }
 
-  componentWillMount() {
-    this.isMobile()
-  }
-
   pageOnChange(page, pageSize) {
     this.setState({
       pageCurrent: page
     })
-  }
-
-  isMobile() {
-    const checkList = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod']
-    let checkState = false
-    checkList.map((e) => {
-      if(navigator.userAgent.indexOf(e) !== -1) checkState = true
-      return '';
-    })
-    checkState && this.setState({isMobile: checkState})
   }
 
   getArr() {

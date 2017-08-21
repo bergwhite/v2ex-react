@@ -13,9 +13,10 @@ class App extends Component {
   }
   toggleCollapsed = () => {
     this.setState({
-      collapsed: !this.state.collapsed,
+      collapsed: !this.state.collapsed
     });
   }
+
   render() {
     return (
       <div>

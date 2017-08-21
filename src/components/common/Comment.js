@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import {Avatar, Row, Col}  from 'antd';
 import { Link } from 'react-router-dom'
+import isMobile  from '../../util/isMobile';
 
 class App extends Component {
   constructor(props) {
+    const isMobileState = isMobile()
     super(props);
     this.state = {
       userInfo: {
         name: this.props.userInfoName,
         img: this.props.userInfoImg
       },
-      userMess: this.props.userMess
+      userMess: this.props.userMess,
+      isMobile: isMobileState
     };
   }
   componentDidMount() {
@@ -23,16 +26,20 @@ class App extends Component {
     if (this.props.replies) {
       reply = <div>回复：{this.props.replies}</div>
     }
+    const layout = {}
+    layout.img = this.state.isMobile ? 4 : 1
+    layout.name  = this.state.isMobile ? 4 : 2
+    layout.reply  = this.state.isMobile ? 6 : 2
     return (
       <div>
       <Row style={{margin: '20px 0 0 32px'}}>
-        <Col span={4}>
+        <Col span={layout.img}>
           <Link to={`/user/${userInfo.name}`}><Avatar src={userInfo.img} /></Link>
         </Col>
-        <Col span={4}>
+        <Col span={layout.name}>
           <Link to={`/user/${userInfo.name}`}>{userInfo.name}</Link>
         </Col>
-        <Col span={4}>
+        <Col span={layout.reply}>
           {reply}
         </Col>
       </Row>

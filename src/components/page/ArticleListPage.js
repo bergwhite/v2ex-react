@@ -34,6 +34,7 @@ class App extends Component {
   componentWillMount() {
     
   }
+
   render() {
     let rows = []
     const data = this.state.data || []

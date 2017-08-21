@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import {Card, Avatar, Row, Col}  from 'antd';
+import isMobile  from '../../util/isMobile';
 
 class App extends Component {
   constructor(props) {
     super(props);
+    const isMobileState = isMobile()
     this.state = {
       artName: this.props.artName,
       artContent: this.props.artContent,
       nodeTitle: this.props.nodeTitle,
-      nodeName: this.props.nodeName
+      nodeName: this.props.nodeName,
+      isMobile: isMobileState
     };
   }
   componentDidMount() {
@@ -23,6 +26,10 @@ class App extends Component {
     let linkUser = ''
     let userInfo = ''
     let userInfoDetail = ''
+    const layout = {}
+    layout.img = this.state.isMobile ? 4 : 1
+    layout.name  = this.state.isMobile ? 4 : 2
+    layout.reply  = this.state.isMobile ? 6 : 2
     if (this.props.userInfo) {
       userInfoDetail = this.props.userInfo
       if (!this.props.isArticleDetail) {
@@ -41,13 +48,13 @@ class App extends Component {
           </Link>)
       }
       userInfo = <Row style={{margin: '20px 0 0 0'}}>
-        <Col span={4}>
+        <Col span={layout.img}>
           {linkImg}
         </Col>
-        <Col span={16}>
+        <Col span={layout.name}>
           {linkUser}
         </Col>
-        <Col span={4}>
+        <Col span={layout.reply}>
           回复：{this.props.replies}
         </Col>
       </Row>
