@@ -10,8 +10,8 @@
 * 项目使用React、Reac-router、Axios、ANTD UI进行开发
 * 项目兼容移动端
 * 使用Nginx代理V2EX API并支持CORS跨域
-* 另外还写过一个V2EX项目，v2ex-vue：https://github.com/bergwhite/v2ex-vue
-* 以及nodejs聊天室，nchat：https://github.com/bergwhite/nchat
+* 另外还写过一个Vue版V2EX项目，v2ex-vue：https://x.bw2.me/#/
+* 以及nodejs聊天室，nchat：http://y.bw2.me:8086
 * 找工作，北京。联系方式：YmVyZ3doaXRlc0BnbWFpbC5jb20=
 * 觉得对你有帮助的话，欢迎给个star，谢谢
 
