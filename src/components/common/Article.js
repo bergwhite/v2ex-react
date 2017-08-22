@@ -12,7 +12,8 @@ class App extends Component {
       artContent: this.props.artContent,
       nodeTitle: this.props.nodeTitle,
       nodeName: this.props.nodeName,
-      isMobile: isMobileState
+      isMobile: isMobileState,
+      isHeightCut: false
     };
   }
   componentDidMount() {
@@ -59,8 +60,27 @@ class App extends Component {
         </Col>
       </Row>
     }
+    // TODO: cut height in some condition
+    let ifHeightCutStyle = {}
+    let ifHeightCutState = this.state.isHeightCut
+    if (ifHeightCutState && this.props.location.pathname.indexOf('/post/') === -1) {
+      ifHeightCutStyle = {
+        width: '100%',
+        margin:'0 0 20px 0',
+        color: 'black',
+        height: '200px',
+        overflow: 'hidden'
+      }
+    }
+    else {
+      ifHeightCutStyle = {
+        width: '100%',
+        margin:'0 0 20px 0',
+        color: 'black'
+      }
+    }
     return (
-      <Card extra={nodeTitle} title={artName} style={{ width: '100%', margin:'0 0 20px 0', color: 'black' }}>
+      <Card extra={nodeTitle} title={artName} style={ifHeightCutStyle}>
         <div dangerouslySetInnerHTML={{__html: artContent}} />
         {userInfo}
       </Card>

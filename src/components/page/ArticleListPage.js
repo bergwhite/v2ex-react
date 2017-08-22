@@ -9,6 +9,7 @@ class App extends Component {
     this.state = {
       data: []
     }
+    console.log(this.props)
     const realUrlTypeList = ['/', 'latest', 'hot']
     const pathName = this.props.location.pathname
     let realUrlType = pathName !== '/' ? pathName.replace('/','') : 'latest'
