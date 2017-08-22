@@ -79,3 +79,13 @@ gzip_types *; # 压缩所有类型文件
 gzip_vary on; # 添加响应头
 
 ```
+
+## 开始使用
+
+```
+
+yarn install  // 安装依赖
+yarn build // 构建线上文件
+yarn start // 本地调试
+
+```

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Route } from 'react-router-dom'
-import { Row, Col, Menu, Icon } from 'antd';
+import { BackTop, Row, Col, Menu, Icon } from 'antd';
 import ArticleListPage from './components/page/ArticleListPage';
 import ArticlePage from './components/page/ArticlePage';
 import AboutPage from './components/page/AboutPage';
@@ -29,6 +29,7 @@ class App extends Component {
 
     return (
       <div>
+        <BackTop />
         <div>
           <a style={forkStyle} className="fork-me-wrap" href="https://github.com/bergwhite/v2ex-react" target="_blank" rel="noopener noreferrer">
             <img style={{display:'block', width: '100px', height: '100px'}} alt="fork" className="fork-me" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" />
