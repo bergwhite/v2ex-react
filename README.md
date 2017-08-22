@@ -18,7 +18,7 @@
 ## 在线演示（2/4）
 
 * [点击进入](https://v2ex-react.bw2.me/)
-* [另外还用cordova打包成了安卓APK](http://atmp.oss-cn-qingdao.aliyuncs.com/apk/v2ex-react-1.0.ap)
+* [另外还用cordova打包成了安卓APK](http://atmp.oss-cn-qingdao.aliyuncs.com/apk/v2ex-react-1.0.apk)
 
 第一个二维码是移动端页面，第二个二维码是apk的下载地址
 
